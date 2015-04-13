@@ -1,0 +1,110 @@
+package com.matsobane.smaker.dto;
+import com.matsobane.smaker.data.Activity;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+
+public class ActivityDTO  {
+        
+    private Integer activityID;    
+    private String activityName;    
+    private String description;    
+    private Integer priorityFlag;    
+    private BigInteger localID;    
+    private Date syncDate;    
+    private Double durationInDays;    
+    private List<CoursetraineeactivityDTO> coursetraineeactivityList = new ArrayList<>();    
+//    private CourseDTO course;
+    private int courseid;
+    public ActivityDTO() {
+    }
+    public ActivityDTO(Activity a){
+        this.activityID = a.getActivityID();
+        this.activityName = a.getActivityName();
+        this.description = a.getDescription();
+        this.priorityFlag = a.getPriorityFlag();
+        this.localID = a.getLocalID();
+        this.syncDate = a.getSyncDate();
+        this.durationInDays = a.getDurationInDays();      
+//        this.course = new CourseDTO(a.getCourse());
+        this.courseid = a.getCourse().getCourseID();
+        
+        
+}
+
+    public Integer getActivityID() {
+        return activityID;
+    }
+
+    public void setActivityID(Integer activityID) {
+        this.activityID = activityID;
+    }
+
+    public String getActivityName() {
+        return activityName;
+    }
+
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getPriorityFlag() {
+        return priorityFlag;
+    }
+
+    public void setPriorityFlag(Integer priorityFlag) {
+        this.priorityFlag = priorityFlag;
+    }
+
+    public BigInteger getLocalID() {
+        return localID;
+    }
+
+    public void setLocalID(BigInteger localID) {
+        this.localID = localID;
+    }
+
+    public Date getSyncDate() {
+        return syncDate;
+    }
+
+    public void setSyncDate(Date syncDate) {
+        this.syncDate = syncDate;
+    }
+
+    public Double getDurationInDays() {
+        return durationInDays;
+    }
+
+    public void setDurationInDays(Double durationInDays) {
+        this.durationInDays = durationInDays;
+    }
+
+    public List<CoursetraineeactivityDTO> getCoursetraineeactivityList() {
+        return coursetraineeactivityList;
+    }
+
+    public void setCoursetraineeactivityList(List<CoursetraineeactivityDTO> coursetraineeactivityList) {
+        this.coursetraineeactivityList = coursetraineeactivityList;
+    }
+
+    public int getCourseid() {
+        return courseid;
+    }
+
+    public void setCourseid(int courseid) {
+        this.courseid = courseid;
+    }
+
+   
+}
